@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             // Handle initialization error
         }
     }
-
+    /*need check permissions in code above android8.x*/
     private boolean checkPermission(String permission,int requestCode){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(this, permission)
@@ -136,6 +136,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
+    /*need to change coords between real picture and imageview
+    * as touch point(MotionEvent) is referred to iamgeview
+    * */
     public float[] getPointerCoords(ImageView view, MotionEvent e)
     {
         final int index = e.getActionIndex();
